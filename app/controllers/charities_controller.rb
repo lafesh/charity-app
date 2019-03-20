@@ -4,7 +4,7 @@ class CharitiesController < ApplicationController
   # GET /charities
   def index
     @charities = Charity.all
-
+    #binding.pry
     render json: @charities
   end
 
@@ -16,7 +16,6 @@ class CharitiesController < ApplicationController
   # POST /charities
   def create
     @charity = Charity.new(charity_params)
-
     if @charity.save
       render json: @charity, status: :created, location: @charity
     else
@@ -46,6 +45,6 @@ class CharitiesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def charity_params
-      params.require(:charity).permit(:name, :description, :category, :rate)
+      params.require(:charity).permit(:name, :description, :category, :rate, :pw)
     end
 end

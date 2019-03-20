@@ -5,6 +5,7 @@ class CreateCharities < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :category
       t.string :rate
+      #t.string :pw
 
       t.timestamps
     end
